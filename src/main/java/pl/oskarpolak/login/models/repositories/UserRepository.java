@@ -6,4 +6,10 @@ import pl.oskarpolak.login.models.entities.UserEntity;
 
 @Repository
 public interface UserRepository extends CrudRepository<UserEntity, Integer> {
+        //Za pomoca nazw metod
+        //Za pomoca SQL
+        //Za pomoca JPQL
+
+
+        boolean existsByLogin(String oasodasndasd);
 }

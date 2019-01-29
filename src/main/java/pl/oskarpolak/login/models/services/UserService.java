@@ -23,6 +23,9 @@ public class UserService {
         userEntity.setPassword(password);
         userEntity.setLogin(login);
 
+        if(userRepository.existsByLogin(login)){
+            return false;
+        }
         return userRepository.save(userEntity) != null;
     }
 
