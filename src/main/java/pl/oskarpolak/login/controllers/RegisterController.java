@@ -12,7 +12,6 @@ import pl.oskarpolak.login.models.services.UserService;
 @Controller
 public class RegisterController {
 
-
     final UserService userService;
 
     @Autowired
@@ -32,7 +31,9 @@ public class RegisterController {
                         Model model){
         if (!userService.addUser(login, password, email)) {
               model.addAttribute("info", "Nick jest zajęty!");
+              return "register";
         }
-        return "redirect:/login"; // udalo sie
+
+        return "redirect:/login";
     }
 }
